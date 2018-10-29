@@ -13,3 +13,9 @@ $names[1] = "String"
 
 $names
 
+# declare an empty array
+$newArray = @()
+
+$numbers = 1, 45, 77, 82
+
+$numbers -contains 45
