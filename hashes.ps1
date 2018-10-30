@@ -15,8 +15,11 @@ $hash.learn # same thing
 # add value to the hash table(object)
 
 $hash["Top Gear"] = "t0pgear.com"
-$hash
+$hash # show the new row
 
 # remove value
 $hash.Remove("Pluralsight")
 $hash
+
+# check if key exists
+$hash.Contains("bleep") #false
