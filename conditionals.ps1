@@ -29,7 +29,7 @@ else
 # switch checks all the options even after it finds a first match
 
 $guess = 1875
-switch ($guess)
+switch -CaseSensitive ($guess)
 {
 
 48 {"Forty eight"}

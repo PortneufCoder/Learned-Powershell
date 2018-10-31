@@ -8,7 +8,7 @@ $victor #call the value of victor
 
 $country = "specifically nigeria"
 
-$address = $victor + $country
+$address = $victor + $country # concatenate two variables and reassign them
 
 $address
 

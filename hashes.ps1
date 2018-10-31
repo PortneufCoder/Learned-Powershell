@@ -2,6 +2,8 @@
 # HASH TABLES
 #___________________________#
 
+# hashes in powershell are basically objects with key-value pairs.
+
 $hash = @{
 "key" = "someValue";
 "Pluralsight" = "pluralsight.com";
