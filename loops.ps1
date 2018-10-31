@@ -57,6 +57,30 @@ for ($f = 0; $f -le 5; $f++) # The initializer can also be set outside the loop
 
 }
 
-$array = 5, 10
-$array.Add(25,30,35,40,45)
+# iterating over a collection 1 by 1
+$array = @()
+$array += 25,30,35,40,45 # push stuff into the existing array
 $array
+
+for ($i = 0; $i -lt $array.Length; $i++)
+{
+
+"$array[$i]=" + $array[$i]
+
+}
+
+$newarray = "Dublin", "Carlow", "Kerry", "Donegal";
+
+foreach ($iteration in $newarray) # $iteration holds the value of each item in the array as the iteration works
+
+{
+
+"$iteration = $iteration"
+
+
+}
+if ($newarray -contains "e") {
+
+$newarray
+
+}
