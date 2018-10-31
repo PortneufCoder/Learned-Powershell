@@ -16,3 +16,7 @@ $address
 New-Variable -Name var -Value 123
 $var
 
+$dlocation = D:/
+$clocation = C:\Users
+
+Get-ChildItem | Where-Object  {$_.Extension -contains ".csproj"}

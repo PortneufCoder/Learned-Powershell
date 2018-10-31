@@ -46,3 +46,17 @@ do
     $c++
 
 } until ($c -gt 8)
+
+# PowerShell "for" loops!
+
+for ($f = 0; $f -le 5; $f++) # The initializer can also be set outside the loop
+
+{
+
+"`$f = $f"
+
+}
+
+$array = 5, 10
+$array.Add(25,30,35,40,45)
+$array
