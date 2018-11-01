@@ -65,7 +65,9 @@ $array
 for ($i = 0; $i -lt $array.Length; $i++)
 {
 
-"$array[$i]=" + $array[$i]
+    "$array[$i]=" + $array[$i] # log each value of $array as the for loop iterates
+
+
 
 }
 
@@ -79,8 +81,57 @@ foreach ($iteration in $newarray) # $iteration holds the value of each item in t
 
 
 }
-if ($newarray -contains "e") {
 
-$newarray
+# practice
 
+$newarray = "Dublin", "Carlow", "Kerry", "Donegal";
+
+for ($d = 0; $d -lt $newarray.Length; $d++) {
+
+    if ($newarray[$d] -like "Monaghan") {
+    
+    "$newarray[$d]=" + $newarray[$d]
+
+
+} else {
+
+    New-Item -Path . -Name "else.txt" -ItemType "file" -Value "Tested the loop"
 }
+
+} # --> file created
+
+
+# How to use foreach on tht output of a cmdlet
+# My example
+
+Set-Location D:/
+
+foreach ($file in dir) {
+
+    if($file.Extension -like "*.ps1") {
+
+    Move-Item -Path . -Destination D:\Test
+    $file.Name
+} 
+
+} 
+
+# use 'break' to exit the above loop
+
+
+Set-Location D:\tfs_new # --> This sets starting point of my code
+
+foreach ($key in Get-ChildItem) {
+
+    if($key.CreationTime -contains "November-07-07") {
+
+        $key.Name
+        continue
+
+
+    }
+
+    "This file does not match: $key"
+
+} # --> 'continue' performs the action and exits on first hit
+
