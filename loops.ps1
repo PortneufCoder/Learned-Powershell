@@ -67,8 +67,6 @@ for ($i = 0; $i -lt $array.Length; $i++)
 
     "$array[$i]=" + $array[$i] # log each value of $array as the for loop iterates
 
-
-
 }
 
 $newarray = "Dublin", "Carlow", "Kerry", "Donegal";
@@ -119,7 +117,7 @@ foreach ($file in dir) {
 # use 'break' to exit the above loop
 
 
-Set-Location D:\tfs_new # --> This sets starting point of my code
+Set-Location D:\tfs_new # --> This specifies where my code will run
 
 foreach ($key in Get-ChildItem) {
 
@@ -127,7 +125,6 @@ foreach ($key in Get-ChildItem) {
 
         $key.Name
         continue
-
 
     }
 

@@ -2,22 +2,22 @@
 
 # we can use ; to put commands on single line
 
-$cool = {Clear-Host; "PowerShell is more powerful than I thought!"}
+$cool = { Clear-Host; "PowerShell is more powerful than I thought!" }
 
 & $cool # the & ampersand before calling the variable allows its execution
-
-$fancyStuff = {"Goose must be a great dinner"}
+ 
+$fancyStuff = { "Goose must be a great dinner" }
 
 $goose = $fancyStuff
 
-for ($i = 0; $i -lt 3; $i++) {
+for ( $i = 0; $i -lt 3; $i++ ) {
 
     &$fancyStuff;
     &$goose;
 
 } # --> both return the same thing
 
-$value = {20 + 15}
+$value = { 20 + 15 }
 
 &$value
 
@@ -43,8 +43,8 @@ $drama = {
 # better method to do the above aka, clearer
 
 $drama = {
-
-   param ($question, $answer)
+ 
+   param ( $question, $answer )
    Write-Host "Eternal question: $question. Is it $answer"
 
 }
@@ -55,8 +55,8 @@ $drama = {
 
  $qa = {
 
-    param ($question, $answer) 
-    if (!$answer) { $answer = "Error: you must provide an answer"}
+    param ( $question, $answer ) 
+    if ( !$answer ) { $answer = "Error: you must provide an answer" }
     Write-Host "Here's the question: $question, The answer is $answer"
 
 } # --> here, the ! (not) symbol indicates the variable is not a value
@@ -67,7 +67,7 @@ $drama = {
 
 $math = {
 
-    param ([int] $x, [int] $y)
+    param ( [int] $x, [int] $y )
     return $x * $y
 
 } # [int] forces the params to be integers
@@ -84,24 +84,24 @@ $myCoolFiles = {
         if ( $_.Name -like "*.ini" ) # --> $_ refers to the "current object"
         { return $_.Name }
 
-        else { "Nothing"}
+        else { "Nothing" }
 }
 
 }
+
 Get-ChildItem | &$myCoolFiles # Here we pass the 'process' pipeline through the 'dir' or 'Get-ChildItem' command so it can run
 
 
 $getTxtFiles = {
 
-    begin { $retval = "Here are the txt files:"} # begin here
+    begin { $retval = "Here are the txt files:" } # begin here
     process {
-        if ( $_.extension -like "*.txt")
+        if ( $_.extension -like "*.txt" )
         { $retval = $retval + "`t" + $_.Extension + "`r`n" } # do process
 
     }
 
     end { return $retval } # then end
-
 
 }
 
