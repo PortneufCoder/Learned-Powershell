@@ -64,6 +64,6 @@ $school = "Brainstation"
 "my name is {0} and I'm {1} years of age. I live in {2} and I recently studied at {3}.The new BladeRunner movie happens in {4}" -f $name, $myAge, $lair, $school, ("20" + "19")  
 
 # Regular Expressions
-"888-368-1240" -match "[0-9]{3}-[0-9]{3}-[0-9]{4}" #expect a numbet btw 0 and 9, 3 digits long, evaluate with what's on left
+"888-368-1240" -match "[0-9]{3}-[0-9]{3}-[0-9]{4}" #expect a number btw 0 and 9, 3 digits long, evaluate with what's on left
 "zzz-368-1240" -match "[0-9]{3}-[0-9]{3}-[0-9]{4}"
 "888.368.1240" -inotmatch "[0-9]{3}-[0-9]{3}-[0-9]{4}"
