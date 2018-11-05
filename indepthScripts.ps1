@@ -64,13 +64,14 @@ $drama = {
 &$qa "Question?"
 
 # explicit typing in PowerShell
+# [int] forces the params to be integers
 
 $math = {
 
     param ( [int] $x, [int] $y )
     return $x * $y
 
-} # [int] forces the params to be integers
+} 
 
 &$math 3 12
 

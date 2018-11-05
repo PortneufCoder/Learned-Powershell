@@ -11,9 +11,10 @@ get-fullName "Code is" "good!" # simple basic syntax like most languages
 
 # working with refs in powershell fncs...
 
-function Set-Fvar( [ref] $myparam ) {
-    $myparam.Value = 38
 
+function Set-Fvar( [ref] $myparam ) {
+
+    $myparam.Value = 38
 
 }
 
@@ -21,6 +22,7 @@ $fvar = 42
 "fvar before: $fvar"
 Set-FVar ([ref] $fvar) # calling ref here switches the value of my parameter, so on line 21 fvar is now 38.
 "fvar after: $fvar"
+
 
 # pipeline functions!
 
@@ -79,13 +81,14 @@ filter Show-TXTFiles {
     $filename = $_.Name
     if ( $filename -like "*.txt" ) {
         "Here are the text files: "
+
         return $_
 
     }
 
 }
 
-Get-ChildItem | Show-INIFiles | List-AllFiles
-Get-ChildItem | Show-txtFiles | List-AllFiles
+
+Get-ChildItem | Show-TXTFiles 
 
 # In the above, we are able to use the same function more than once!
