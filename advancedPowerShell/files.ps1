@@ -43,3 +43,42 @@ Get-Content "testing.txt"
 
 # We can save objects by outputting to .CSV
 
+Get-Process | Export-Csv "Processes.csv"
+
+# I'm saving the result's headers into a variable for later use.
+
+$header = Get-Content "header.txt"
+
+$header.GetType()
+
+$header
+
+for ( $b = 0; $b -le $header.Count; $b++ ) {
+    $header[$b]
+
+
+}
+
+$splitHeader = [System.Environment]::NewLine
+$formattedHeader = [string]::Join($splitHeader, $header)
+
+$formattedHeader
+
+
+# XML files
+# Create an XML template
+
+$courseTemplate = @" 
+    <courses version="1.0">
+        <course>
+            <name></name>
+            <level></level>
+        </course>
+    </courses>
+"@ # --> create an xml template
+
+# export the content to the file
+$courseTemplate | Out-File "d:\udemy.xml"
+
+$courseXml = New-Object xml
+$courseXml.Load("d:\udemy.xml")
